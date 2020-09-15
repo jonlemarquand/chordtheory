@@ -15,7 +15,7 @@ app.get('/', cors(corsOptions), (req, res) => {
 app.get('/newquestion', cors(corsOptions), (req, res) => {
     const newQuestion = question();
     res.status(200).json({ newQuestion });
-    console.log(`New Question sent: ${newQuestion.name}`);
+    console.log(`New Question sent: ${newQuestion.name} - ${newQuestion.chord}`);
 });
 
 
