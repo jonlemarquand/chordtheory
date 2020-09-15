@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import HeaderLogo from '../../components/Header/HeaderLogo';
-import Score from '../../components/Score/Score';
-import ScoreButton from '../../components/Button/ScoreButton';
+import HeaderLogo from '../components/Header/HeaderLogo';
+import Score from '../components/Score/Score';
+import ScoreButton from '../components/Button/ScoreButton';
 
-import '../../App.scss';
-import tick from '../../assets/tick.svg';
-import cross from '../../assets/cross.svg';
+import '../App.scss';
+import tick from '../assets/tick.svg';
+import cross from '../assets/cross.svg';
 import { render } from 'react-dom';
 
 const Quiz = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import Landing from './users/containers/Landing';
-import Quiz from './quiz/containers/Quiz';
+import Quiz from './containers/Quiz';
 
 function App() {
   return (
