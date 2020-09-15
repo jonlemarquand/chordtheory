@@ -14,6 +14,8 @@ const Quiz = () => {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [questionNumber, setQuestionNumber] = useState(1);
+    const [rightScore, setRightScore] = useState(0);
+    const [wrongScore, setWrongScore] = useState(0);
 
     const callQuestionAPI = () => {
         fetch("http://localhost:8000/newquestion")
@@ -29,6 +31,16 @@ const Quiz = () => {
         callQuestionAPI();
     }, [questionNumber]);
 
+
+    const changeScore = (e) => {
+        if (e.target.dataset.value === "rightTick") {
+            setRightScore(rightScore + 1);
+            //setRightScore( rightScore =+ 1);
+        } else if (e.target.dataset.value === "wrongCross") {
+            setWrongScore(wrongScore + 1);
+        }
+    }
+
     return (
         <div className="App">
             <div className="top">
@@ -43,10 +55,10 @@ const Quiz = () => {
                 { answer }
       </div>
             <div className="rightWrong">
-                <ScoreButton url={tick} alt="tick" styling="rightTick" />
-                <ScoreButton url={cross} alt="cross" styling="wrongCross" />
+                <ScoreButton url={tick} alt="tick" styling="rightTick" changeScore={changeScore}/>
+                <ScoreButton url={cross} alt="cross" styling="wrongCross" changeScore={changeScore}/>
             </div>
-            <Score />
+            <Score rightScore={rightScore} wrongScore={wrongScore}/>
         </div>
     );
 }
