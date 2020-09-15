@@ -35,9 +35,11 @@ const Quiz = () => {
     const changeScore = (e) => {
         if (e.target.dataset.value === "rightTick") {
             setRightScore(rightScore + 1);
+            setQuestionNumber(questionNumber + 1);
             //setRightScore( rightScore =+ 1);
         } else if (e.target.dataset.value === "wrongCross") {
             setWrongScore(wrongScore + 1);
+            setQuestionNumber(questionNumber + 1);
         }
     }
 
