@@ -1,0 +1,22 @@
+@import '../../assets/_colours.scss';
+
+.rectangleButton {
+    width: 180px;
+    height: 60px;
+    margin: 20px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainMenuButton {
+    background: $purple;
+    border: 3px solid $gold;
+    color: $gold;
+
+    &:hover {
+        background: $gold;
+        color: $purple;
+    }
+}

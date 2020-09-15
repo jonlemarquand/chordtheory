@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import './assets/_colours.scss';
+
+$primary-font: "Lato", sans-serif;
+
+body {
+	margin: 0;
+	padding: 0;
+	color: $white;
+	background-color: $purple;
+	font-family: $primary-font;
+}
+
+h2 {
+	font-family: $primary-font;
+	font-size: 64px;
+	font-weight: 900;
+}
+
+a {
+	text-decoration: none;
+}
+
+.App {
+	width: 100%;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10vh 0;
+}
+
+.top {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.logo {
+	background: url("./assets/chordtheory.png");
+	width: 605px;
+	height: 200px;
+	&.small {
+		background: url("./assets/chordtheory-small.png");
+		width: 172px;
+		height: 57px;
+	}
+
+}
+
+.answer {
+	&.pre {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.waitText {
+		font-weight: 400;
+		font-size: 28px;
+	}
+	#timer {
+		font-weight: 900;
+		font-size: 64px;
+	}
+
+	&.post {
+		font-size: 64px;
+		font-family: $primary-font;
+		font-weight: 900;
+	}
+}
+
+.fa-check,
+.fa-times {
+	font-size: 48px;
+	color: $gold;
+}
+
+.rightWrong {
+	width: 250px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 80px;
+
+	.scorebutton {
+		height: 90px;
+		width: 90px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		border: 5px solid $gold;
+        cursor: pointer;
+        
+        .rightTick {
+            width: 45px;
+        }
+        .wrongCross{
+            width: 36px;
+        }
+	}
+}
+
+.bottom {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.score {
+	display: flex;
+	width: 80px;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 36px;
+	font-weight: 900;
+
+	p {
+		margin: 0;
+	}
+}
+
+.hide {
+	display: none;
+}
+
+@media only screen and (max-height: 850px) {
+	.App {
+		height: 90vh;
+		padding: 5vh 0;
+	}
+	.logo {
+		background: url("./assets/chordtheory-small.png");
+		width: 172px;
+		height: 57px;
+	}
+}
+
+@media only screen and (max-height: 812px) {
+	.App {
+		height: 94vh;
+		padding: 3vh 0;
+	}
+}
+@media only screen and (max-height: 650px) {
+	h2 {
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+}
